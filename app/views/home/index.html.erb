@@ -45,11 +45,21 @@
             <p>These are the books that have been marked as awesome</p>
           </div>
           <div class="row">
+ 
           	<% if @aString.present? %>
 			<% books = JSON.parse @aString %>
 			<% books.each do |data| %>
-            <div class="col-xs-6 col-lg-4">
-              <h2><%= data["title"] %></h2>
+      
+              <div class="col-xs-6 col-lg-4">
+              <h2><%= data["title"] %><br>
+
+              <% if !data["oclc_id"].blank? %>
+              <div class="iconcover bookcover" id="OCLC:<%= data["oclc_id"] %>" data-oclc="<%= data["oclc_id"] %>">
+</div>
+
+     <% end %></h2>
+
+
               <p><%= data["author"] %></p>
               <p>Votes:<%= data["votes"] %></p>
               <p><a class="btn btn-info" href="http://newcatalog.library.cornell.edu/catalog/<%= data['bibid']%>" role="button">See in catalog &raquo;</a></p>
@@ -80,16 +90,6 @@
     </div><!--/.container-->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <script src="offcanvas.js"></script>
 
 
 
