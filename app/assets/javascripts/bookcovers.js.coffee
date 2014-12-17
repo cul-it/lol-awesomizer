@@ -26,9 +26,9 @@ bookcovers =
       thumbnail = values.thumbnail_url
       if (thumbnail)
         # Default response returns smallest thumbnail, swap out with largest
-        thumbnail = values.thumbnail_url.replace('zoom=5','zoom=1')
+        thumbnail = values.thumbnail_url.replace('zoom=5','zoom=1').replace('edge=curl','')
         $("##{divId}").replaceWith ->
-          '<img class="bookcover img-polaroid" alt="" src="' + thumbnail + '">'
+          '<img class="bookcover img-thumbnail img-responsive" alt="" src="' + thumbnail + '">'
 
   # Retrieve covers via Google API
   fetchCovers: () ->
