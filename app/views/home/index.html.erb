@@ -36,6 +36,7 @@
 
 <div class="container">
   <div class="row">
+  <div class="col-xs-12">
   <% if params[:order] == "votes" %>
   <h2>Most Awesomized</h2>
   <% else %>
@@ -44,7 +45,7 @@
   <div id="documents">
     <% books.each do |data| %>
 
-
+<% if  data["votes"] != "0" %>
 
 
 
@@ -63,8 +64,10 @@
              <p> <% if !data["author"].blank? %><%= data["author"] %><br><%end%>Awesome Votes: <%= data["votes"] %></p>
              
             </div><!--/.col-xs-6.col-lg-4-->
+            <% end %>
             <%end%>
             <%end%>
+            </div>
             </div>
           </div><!--/row-->
           </div>
