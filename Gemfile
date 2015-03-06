@@ -29,6 +29,9 @@ gem 'json'
 gem 'httpclient'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem "responders"
+gem 'builder'
+gem 'nokogiri'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
