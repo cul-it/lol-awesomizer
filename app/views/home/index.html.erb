@@ -4,7 +4,7 @@
       <% if params[:order] == "votes" %>
       <% books.sort_by! { | h | h["votes"] }.reverse! %>
       <% else %>
-      <% books.sort_by! { | h | h["id"] }.reverse! %>
+      <% books.sort_by! { | h | h["timestamp"] }.reverse! %>
       <% end %>
 
  <nav class="navbar navbar-inverse " role="navigation">
