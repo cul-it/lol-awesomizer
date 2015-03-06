@@ -1,4 +1,5 @@
     @objects = JSON.parse @aString
+    @objects.sort_by! { | h | h["timestamp"] }.reverse!
 
 
 xml.instruct! :xml, :version=>"1.0"
