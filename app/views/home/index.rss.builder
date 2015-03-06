@@ -6,9 +6,9 @@ xml.rss(:version=>"2.0") {
         
   xml.channel {
           
-    xml.title('woo')
+    xml.title('The Awesomizer')
     xml.link('http://awesome.library.cornell.edu')
-    xml.description('awesome stuff at CUL')
+    xml.description('Awesome stuff at Cornell University Library')
     xml.language('en-us')
     @objects.each do |data|
       xml.title( data["title"] )
